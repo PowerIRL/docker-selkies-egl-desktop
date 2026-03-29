@@ -178,11 +178,12 @@ server {
 # Clear the cache registry
 rm -rf "${HOME}/.cache/gstreamer-1.0"
 
-# Start the Selkies WebRTC HTML5 remote desktop application
-selkies-gstreamer \
+# Start the Selkies WebRTC HTML5 remote desktop application (Pixelflux capture)
+selkies \
     --addr="localhost" \
     --port="${SELKIES_PORT:-8081}" \
     --enable_basic_auth="false" \
     --enable_metrics_http="true" \
     --metrics_http_port="${SELKIES_METRICS_HTTP_PORT:-9081}" \
+    --mode="webrtc" \
     $@
